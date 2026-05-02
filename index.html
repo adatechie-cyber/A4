@@ -43,13 +43,28 @@
       theme: {
         extend: {
           colors: {
-            ink: '#0e0f13',
-            paper: '#f5f2ec',
-            gold: '#b8922e',
-            'gold-light': '#d4a84b',
-            slate: '#2b2d3a',
-            mid: '#6b6d7d',
-            'accent-bg': '#1a1c26'
+            // NEW VIOLET-ORANGE-GREEN PALETTE
+            'violet': '#8B5CF6',
+            'violet-light': '#A78BFA',
+            'violet-dark': '#6D28D9',
+            'violet-glow': '#C4B5FD',
+            'orange': '#F97316',
+            'orange-light': '#FB923C',
+            'orange-dark': '#EA580C',
+            'orange-glow': '#FDBA74',
+            'green': '#10B981',
+            'green-light': '#34D399',
+            'green-dark': '#059669',
+            'green-glow': '#6EE7B7',
+            // Background tones adjusted for new palette
+            ink: '#0c0a14',
+            'ink-light': '#1a1525',
+            paper: '#f8f6ff',
+            'accent-bg': '#15102a',
+            'accent-bg-light': '#1e1835',
+            slate: '#1c1633',
+            mid: '#7c7299',
+            rule: '#2d2642'
           },
           borderRadius: {
             '2xl': '1rem'
@@ -93,7 +108,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Reset and Base */
+    /* ─ RESET & BASE ── */
     *, *::before, *::after { 
       box-sizing: border-box; 
       margin: 0; 
@@ -109,14 +124,14 @@
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
       font-weight: 300;
-      background: #0e0f13;
-      color: #f5f2ec;
+      background: #0c0a14;
+      color: #f8f6ff;
       font-size: clamp(0.9rem, 1.2vw, 1.05rem);
       line-height: 1.8;
       overflow-x: hidden;
     }
 
-    /* Typography */
+    /* ── TYPOGRAPHY ── */
     h1, h2, h3 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -133,29 +148,107 @@
       font-size: clamp(0.625rem, 0.8vw, 0.75rem);
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #d4a84b;
       margin-bottom: 0.6rem;
     }
 
-    /* Transitions */
+    /* ── VIOLET LABELS ── */
+    .label-violet {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.625rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #A78BFA;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── ORANGE LABELS ── */
+    .label-orange {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.625rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #FB923C;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── GREEN LABELS ── */
+    .label-green {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.625rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #34D399;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── PREMIUM TRANSITIONS ─ */
     .transition-premium {
       transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    /* Glass Card */
+    /* ─ GLASS CARDS WITH NEW PALETTE ── */
     .glass-card {
-      background: rgba(26, 28, 38, 0.65);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 0.5px solid rgba(184, 146, 46, 0.12);
+      background: rgba(26, 21, 37, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 0.5px solid rgba(139, 92, 246, 0.15);
       border-radius: 1rem;
       box-shadow: 
-        0 1px 2px rgba(0,0,0,0.10),
-        0 4px 8px rgba(0,0,0,0.15),
-        0 12px 24px rgba(0,0,0,0.20);
+        0 1px 2px rgba(139, 92, 246, 0.05),
+        0 4px 8px rgba(139, 92, 246, 0.08),
+        0 12px 24px rgba(139, 92, 246, 0.10);
+    }
+    
+    .glass-card:hover {
+      border-color: rgba(139, 92, 246, 0.35);
+      box-shadow: 
+        0 2px 4px rgba(139, 92, 246, 0.10),
+        0 8px 16px rgba(139, 92, 246, 0.15),
+        0 16px 32px rgba(139, 92, 246, 0.20),
+        0 32px 64px rgba(139, 92, 246, 0.25),
+        0 64px 128px rgba(139, 92, 246, 0.30);
     }
 
-    /* Bento Grid */
+    /* ── VIOLET GLASS CARD ── */
+    .glass-card-violet {
+      background: rgba(139, 92, 246, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 0.5px solid rgba(139, 92, 246, 0.2);
+      border-radius: 1rem;
+      box-shadow: 
+        0 1px 2px rgba(139, 92, 246, 0.08),
+        0 4px 8px rgba(139, 92, 246, 0.12),
+        0 12px 24px rgba(139, 92, 246, 0.15);
+    }
+
+    /* ── ORANGE GLASS CARD ── */
+    .glass-card-orange {
+      background: rgba(249, 115, 22, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 0.5px solid rgba(249, 115, 22, 0.2);
+      border-radius: 1rem;
+      box-shadow: 
+        0 1px 2px rgba(249, 115, 22, 0.08),
+        0 4px 8px rgba(249, 115, 22, 0.12),
+        0 12px 24px rgba(249, 115, 22, 0.15);
+    }
+
+    /* ── GREEN GLASS CARD ─ */
+    .glass-card-green {
+      background: rgba(16, 185, 129, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 0.5px solid rgba(16, 185, 129, 0.2);
+      border-radius: 1rem;
+      box-shadow: 
+        0 1px 2px rgba(16, 185, 129, 0.08),
+        0 4px 8px rgba(16, 185, 129, 0.12),
+        0 12px 24px rgba(16, 185, 129, 0.15);
+    }
+
+    /* ── BENTO GRID ── */
     .bento-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -186,7 +279,7 @@
       }
     }
 
-    /* Reveal Animation */
+    /* ─ STAGGERED REVEAL ── */
     .reveal-stagger {
       opacity: 0;
       transform: translateY(200px);
@@ -208,7 +301,7 @@
     .reveal-stagger:nth-child(7) { transition-delay: 600ms; }
     .reveal-stagger:nth-child(8) { transition-delay: 700ms; }
 
-    /* Grain Overlay */
+    /* ── GRAIN OVERLAY ── */
     .grain-overlay {
       position: fixed;
       top: 0; 
@@ -218,7 +311,7 @@
       pointer-events: none;
       z-index: 9999;
       opacity: 0.025;
-      background-image: url("image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
       animation: grain-shift 8s steps(10) infinite;
       mix-blend-mode: overlay;
     }
@@ -236,14 +329,14 @@
       90% { transform: translate(-1%, 1%); }
     }
 
-    /* Custom Cursor */
+    /* ── CUSTOM CURSOR (VIOLET) ── */
     .custom-cursor {
       position: fixed;
       top: 0; 
       left: 0;
       width: 24px; 
       height: 24px;
-      border: 1.5px solid #d4a84b;
+      border: 1.5px solid #A78BFA;
       border-radius: 50%;
       pointer-events: none;
       z-index: 10000;
@@ -268,8 +361,8 @@
       }
     }
 
-    /* Button */
-    .btn-luxury {
+    /* ── VIOLET BUTTON ─ */
+    .btn-violet {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -279,24 +372,142 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       background: transparent;
-      border: 1px solid rgba(184, 146, 46, 0.4);
-      color: #d4a84b;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: #A78BFA;
       border-radius: 0.75rem;
       transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
     
-    .btn-luxury:hover {
-      background: rgba(184, 146, 46, 0.08);
-      border-color: #d4a84b;
+    .btn-violet:hover {
+      background: rgba(139, 92, 246, 0.12);
+      border-color: #A78BFA;
       transform: translateY(-2px);
+      box-shadow: 
+        0 2px 4px rgba(139, 92, 246, 0.10),
+        0 8px 16px rgba(139, 92, 246, 0.15),
+        0 16px 32px rgba(139, 92, 246, 0.20);
     }
 
-    /* Utilities */
-    .text-gold { color: #d4a84b; }
-    .border-subtle { border-color: rgba(217, 211, 199, 0.15); }
+    /* ── ORANGE BUTTON ── */
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.625rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid rgba(249, 115, 22, 0.4);
+      color: #FB923C;
+      border-radius: 0.75rem;
+      transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .btn-orange:hover {
+      background: rgba(249, 115, 22, 0.12);
+      border-color: #FB923C;
+      transform: translateY(-2px);
+      box-shadow: 
+        0 2px 4px rgba(249, 115, 22, 0.10),
+        0 8px 16px rgba(249, 115, 22, 0.15),
+        0 16px 32px rgba(249, 115, 22, 0.20);
+    }
+
+    /* ── GREEN BUTTON ─ */
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.625rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34D399;
+      border-radius: 0.75rem;
+      transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .btn-green:hover {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: #34D399;
+      transform: translateY(-2px);
+      box-shadow: 
+        0 2px 4px rgba(16, 185, 129, 0.10),
+        0 8px 16px rgba(16, 185, 129, 0.15),
+        0 16px 32px rgba(16, 185, 129, 0.20);
+    }
+
+    /* ── GRADIENT TEXT ── */
+    .gradient-text {
+      background: linear-gradient(135deg, #A78BFA 0%, #FB923C 50%, #34D399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gradient-text-violet-green {
+      background: linear-gradient(135deg, #A78BFA 0%, #34D399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── STATS BAR WITH COLOR TINTS ── */
+    .stat-bar {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #8B5CF6, #F97316, #10B981);
+      opacity: 0.6;
+    }
+
+    /* ── UTILITY CLASSES ─ */
+    .text-violet { color: #A78BFA; }
+    .text-violet-glow { color: #C4B5FD; }
+    .text-orange { color: #FB923C; }
+    .text-orange-glow { color: #FDBA74; }
+    .text-green { color: #34D399; }
+    .text-green-glow { color: #6EE7B7; }
+    .border-subtle { border-color: rgba(45, 38, 66, 0.5); }
+    .border-violet-subtle { border-color: rgba(139, 92, 246, 0.15); }
+    .border-orange-subtle { border-color: rgba(249, 115, 22, 0.15); }
+    .border-green-subtle { border-color: rgba(16, 185, 129, 0.15); }
+
+    /* ── FOCUS STATES ── */
+    .clickable:focus-visible {
+      outline: 2px solid #A78BFA;
+      outline-offset: 2px;
+      border-radius: 0.75rem;
+    }
+
+    /* ── HERO ACCENT LINE ── */
+    .accent-line {
+      width: 3rem;
+      height: 2px;
+      background: linear-gradient(90deg, #8B5CF6, #F97316, #10B981);
+      margin: 1rem 0;
+    }
+
+    /* ── DOT INDICATORS ── */
+    .dot-violet { color: #A78BFA; }
+    .dot-orange { color: #FB923C; }
+    .dot-green { color: #34D399; }
   </style>
 </head>
-<body class="dark bg-ink">
+<body class="dark">
 
   <!-- Grain Overlay -->
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -307,13 +518,13 @@
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-ink/95 backdrop-blur-sm border-b border-subtle transition-premium">
     <div class="max-w-7xl mx-auto px-8n py-4n flex items-center justify-between">
-      <div class="font-serif font-light text-fluid-xs tracking-widest uppercase text-gold">
-        Dr. Adanela Musaraj
+      <div class="font-serif font-light text-fluid-xs tracking-widest uppercase">
+        <span class="gradient-text">Dr. Adanela Musaraj</span>
       </div>
       <nav class="hidden md:flex items-center gap-8n">
-        <a href="#profile" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-gold-light transition-premium clickable">Profile</a>
-        <a href="#services" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-gold-light transition-premium clickable">Services</a>
-        <a href="#contact" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-gold-light transition-premium clickable">Contact</a>
+        <a href="#profile" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-violet-light transition-premium clickable">Profile</a>
+        <a href="#services" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-violet-light transition-premium clickable">Services</a>
+        <a href="#contact" class="font-mono text-fluid-xs tracking-wide uppercase text-mid hover:text-violet-light transition-premium clickable">Contact</a>
       </nav>
     </div>
   </header>
@@ -322,19 +533,45 @@
   <section id="profile" class="relative py-24n px-8n">
     <div class="max-w-7xl mx-auto">
       <div class="mb-6n">
-        <div class="font-mono text-fluid-xs tracking-widest uppercase text-gold mb-6n">
+        <div class="font-mono text-fluid-xs tracking-widest uppercase text-violet-light mb-6n">
           Scientific · Policy · Finance Interface
         </div>
         <h1 class="text-fluid-h1 mb-4n">
-          Dr. Adanela<br><em class="text-gold-light italic">Musaraj</em>
+          Dr. Adanela<br><em class="gradient-text italic">Musaraj</em>
         </h1>
         <h2 class="font-serif font-normal text-fluid-h3 text-paper/70 mb-8n">
           High-Stakes Knowledge Arbitrage Advisor<br/>
           Health · Biotechnology · Education · Agri-Food · Environmental Systems
         </h2>
-        <p class="text-fluid-body text-paper/80 max-w-3xl border-l-2 border-gold pl-6n leading-relaxed">
+        <p class="text-fluid-body text-paper/80 max-w-3xl border-l-2 border-violet pl-6n leading-relaxed">
           Operating at the precise intersection of Biodiversity Conservation and Sustainable Management of Living Natural Resources (ESS6) — converting deep domain expertise into actionable intelligence for Banks, UN agencies, EU bodies, and International NGOs.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <section class="px-8n pb-16n">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4n">
+      <!-- Violet Stat -->
+      <div class="glass-card-violet p-8n text-center stat-bar">
+        <div class="font-serif text-4xl font-light text-violet mb-2n">8</div>
+        <div class="font-mono text-fluid-xs uppercase text-paper/60">Structured Portfolios</div>
+      </div>
+      <!-- Orange Stat -->
+      <div class="glass-card-orange p-8n text-center stat-bar">
+        <div class="font-serif text-4xl font-light text-orange mb-2n">4</div>
+        <div class="font-mono text-fluid-xs uppercase text-paper/60">Industry Sectors</div>
+      </div>
+      <!-- Green Stat -->
+      <div class="glass-card-green p-8n text-center stat-bar">
+        <div class="font-serif text-2xl font-light text-green mb-2n">UN · EU · Banks</div>
+        <div class="font-mono text-fluid-xs uppercase text-paper/60">Institutional Clients</div>
+      </div>
+      <!-- Mixed Stat -->
+      <div class="glass-card p-8n text-center stat-bar">
+        <div class="font-serif text-2xl font-light gradient-text mb-2n">NACE M·P·E·K</div>
+        <div class="font-mono text-fluid-xs uppercase text-paper/60">Classification Codes</div>
       </div>
     </div>
   </section>
@@ -343,8 +580,8 @@
   <section id="services" class="px-8n py-16n">
     <div class="max-w-7xl mx-auto">
       <div class="mb-16n">
-        <div class="font-mono text-fluid-xs tracking-widest uppercase text-gold mb-4n">01 — 08</div>
-        <h2 class="text-fluid-h2 mb-4n">Knowledge Arbitrage Service Portfolios</h2>
+        <div class="font-mono text-fluid-xs tracking-widest uppercase text-violet-light mb-4n">01 — 08</div>
+        <h2 class="text-fluid-h2 mb-4n gradient-text">Knowledge Arbitrage Service Portfolios</h2>
         <p class="text-fluid-body text-paper/70 max-w-2xl">
           Each portfolio is NACE-coded, procurement-compatible, and institutionally legible — designed for Banks, UN agencies, EU bodies, and International NGOs requiring high-fidelity evaluation and advisory services.
         </p>
@@ -353,100 +590,119 @@
       <!-- Bento Grid -->
       <div class="bento-grid">
         
-        <!-- Card 1 -->
-        <article class="bento-item glass-card p-8n reveal-stagger clickable">
+        <!-- Card 1: Violet Theme - Strategic Science & Policy -->
+        <article class="bento-item glass-card-violet p-8n reveal-stagger clickable">
           <div class="flex items-center gap-3n mb-6n">
-            <i data-lucide="scale" class="w-5 h-5 text-gold"></i>
-            <h3 class="text-fluid-h3">Strategic Science &amp; Policy Advisory</h3>
+            <i data-lucide="scale" class="w-5 h-5 text-violet"></i>
+            <h3 class="text-fluid-h3 text-violet-glow">Strategic Science &amp; Policy Advisory</h3>
           </div>
           <p class="text-fluid-sm text-paper/75 mb-6n">
             Converting molecular biology, pharmaceutical insights, and regulatory science into institutional decision frameworks.
           </p>
           <ul class="space-y-2n text-fluid-sm text-paper/65 mb-6n">
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> Science-to-Policy Translation</li>
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> Regulatory Intelligence</li>
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> Investment Risk Analysis</li>
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Science-to-Policy Translation</li>
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Regulatory Intelligence</li>
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Investment Risk Analysis</li>
           </ul>
-          <button class="btn-luxury clickable">
+          <button class="btn-violet clickable">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
             <span>Explore</span>
           </button>
+          <div class="mt-6n font-mono text-fluid-xs text-paper/40">NACE M70.22 · M72.19 · M74.90</div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="bento-item glass-card p-8n reveal-stagger clickable">
+        <!-- Card 2: Orange Theme - Health & Pharma -->
+        <article class="bento-item glass-card-orange p-8n reveal-stagger clickable">
           <div class="flex items-center gap-3n mb-6n">
-            <i data-lucide="heart-pulse" class="w-5 h-5 text-gold"></i>
-            <h3 class="text-fluid-h3">Health &amp; Pharma Programme Design</h3>
+            <i data-lucide="heart-pulse" class="w-5 h-5 text-orange"></i>
+            <h3 class="text-fluid-h3 text-orange-glow">Health &amp; Pharma Programme Design</h3>
           </div>
           <p class="text-fluid-sm text-paper/75 mb-6n">
             Bridging international health guidelines with real-world programme execution at national levels.
           </p>
           <ul class="space-y-2n text-fluid-sm text-paper/65 mb-6n">
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> National Health Programme Architecture</li>
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> Pharmaceutical Supply Chain Strategy</li>
-            <li class="flex items-start gap-2n"><span class="text-gold">•</span> Clinical Research Ecosystem</li>
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> National Health Programme Architecture</li>
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> Pharmaceutical Supply Chain Strategy</li>
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> Clinical Research Ecosystem</li>
           </ul>
-          <button class="btn-luxury clickable">
+          <button class="btn-orange clickable">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
             <span>Explore</span>
           </button>
+          <div class="mt-6n font-mono text-fluid-xs text-paper/40">NACE M70.22 · Q86.90 · M72.11</div>
         </article>
 
-        <!-- Card 3 - Wide -->
-        <article class="bento-item-wide glass-card p-8n reveal-stagger clickable">
+        <!-- Card 3: Green Theme - Evaluation & Impact -->
+        <article class="bento-item-wide glass-card-green p-8n reveal-stagger clickable">
           <div class="flex items-center gap-3n mb-6n">
-            <i data-lucide="target" class="w-5 h-5 text-gold"></i>
-            <h3 class="text-fluid-h3">High-Level Evaluation &amp; Impact Assessment</h3>
+            <i data-lucide="target" class="w-5 h-5 text-green"></i>
+            <h3 class="text-fluid-h3 text-green-glow">High-Level Evaluation &amp; Impact Assessment</h3>
           </div>
           <div class="grid md:grid-cols-2 gap-8n">
             <div>
-              <h4 class="mb-4n">Programme Evaluation</h4>
+              <div class="label-green mb-4n">Programme Evaluation</div>
               <ul class="space-y-2n text-fluid-sm text-paper/65">
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> Erasmus+ &amp; Horizon Europe</li>
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> UN-Funded Health Programmes</li>
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> Education Impact Validation</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> Erasmus+ &amp; Horizon Europe</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> UN-Funded Health Programmes</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> Education Impact Validation</li>
               </ul>
             </div>
             <div>
-              <h4 class="mb-4n">Impact Metrics</h4>
+              <div class="label-green mb-4n">Impact Metrics</div>
               <ul class="space-y-2n text-fluid-sm text-paper/65">
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> SDG Outcome Indicators</li>
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> ESG Frameworks</li>
-                <li class="flex items-start gap-2n"><span class="text-gold">•</span> Scientific Validation</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> SDG Outcome Indicators</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> ESG Frameworks</li>
+                <li class="flex items-start gap-2n"><span class="text-green">•</span> Scientific Validation</li>
               </ul>
             </div>
           </div>
+          <button class="btn-green mt-8n clickable">
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <span>View Methodology</span>
+          </button>
+          <div class="mt-6n font-mono text-fluid-xs text-paper/40">NACE M70.22 · M72.20 · evaluator, assessor, World Bank, IMF, EIB</div>
         </article>
 
-        <!-- Card 4 -->
-        <article class="bento-item glass-card p-8n reveal-stagger clickable">
+        <!-- Card 4: Violet Theme - Scientific Due Diligence -->
+        <article class="bento-item glass-card-violet p-8n reveal-stagger clickable">
           <div class="flex items-center gap-3n mb-6n">
-            <i data-lucide="shield-check" class="w-5 h-5 text-gold"></i>
-            <h3 class="text-fluid-h3">Scientific Due Diligence</h3>
+            <i data-lucide="shield-check" class="w-5 h-5 text-violet"></i>
+            <h3 class="text-fluid-h3 text-violet-glow">Scientific Due Diligence</h3>
           </div>
           <p class="text-fluid-sm text-paper/75 mb-6n">
             Biotech complexity decoded for financial decision-making with investment-grade risk frameworks.
           </p>
-          <button class="btn-luxury clickable">
+          <ul class="space-y-2n text-fluid-sm text-paper/65 mb-6n">
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Startup Seed/Series A Assessment</li>
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Pharma Pipeline Risk Analysis</li>
+            <li class="flex items-start gap-2n"><span class="text-violet">•</span> Healthtech Regulatory Pathway</li>
+          </ul>
+          <button class="btn-violet clickable">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
             <span>Explore</span>
           </button>
+          <div class="mt-6n font-mono text-fluid-xs text-paper/40">NACE K64.99 · M70.22 · TRL3-7 Assessments</div>
         </article>
 
-        <!-- Card 5 -->
-        <article class="bento-item glass-card p-8n reveal-stagger clickable">
+        <!-- Card 5: Orange Theme - Environmental Compliance -->
+        <article class="bento-item glass-card-orange p-8n reveal-stagger clickable">
           <div class="flex items-center gap-3n mb-6n">
-            <i data-lucide="file-badge" class="w-5 h-5 text-gold"></i>
-            <h3 class="text-fluid-h3">Environmental Compliance</h3>
+            <i data-lucide="file-badge" class="w-5 h-5 text-orange"></i>
+            <h3 class="text-fluid-h3 text-orange-glow">Environmental Compliance</h3>
           </div>
           <p class="text-fluid-sm text-paper/75 mb-6n">
             EIA, ESIA, ESS6, Biodiversity Action Plans, and Critical Habitat Assessments for institutional compliance.
           </p>
-          <button class="btn-luxury clickable">
+          <ul class="space-y-2n text-fluid-sm text-paper/65 mb-6n">
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> EIA &amp; ESIA Assessments</li>
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> Biodiversity Offsets &amp; BAP</li>
+            <li class="flex items-start gap-2n"><span class="text-orange">•</span> Critical Habitat Assessment (CHA)</li>
+          </ul>
+          <button class="btn-orange clickable">
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
             <span>Explore</span>
           </button>
+          <div class="mt-6n font-mono text-fluid-xs text-paper/40">ESS6 · EIA · ESIA · BAP · CHA · Feasibility Studies</div>
         </article>
 
       </div>
@@ -454,32 +710,60 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="px-8n py-24n bg-accent-bg/30">
+  <section id="contact" class="px-8n py-24n">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="font-mono text-fluid-xs tracking-widest uppercase text-gold mb-6n">Engage Dr. Musaraj</div>
-      <h2 class="text-fluid-h2 mb-8n">High-Stakes Knowledge Arbitrage Services</h2>
+      <div class="font-mono text-fluid-xs tracking-widest uppercase text-orange mb-6n">Engage Dr. Musaraj</div>
+      <h2 class="text-fluid-h2 mb-8n gradient-text">High-Stakes Knowledge Arbitrage Services</h2>
       <p class="text-fluid-body text-paper/70 mb-12n max-w-2xl mx-auto">
         Available for institutional mandates, programme advisory, due diligence commissions, and evaluation contracts with full ESS6, EIA, ESIA compliance support.
       </p>
       
       <div class="glass-card p-12n mb-12n">
         <div class="grid md:grid-cols-2 gap-8n text-left">
+          <!-- Contact Info -->
           <div>
-            <div class="font-mono text-fluid-xs uppercase text-gold mb-4n">Contact</div>
-            <a href="mailto:adanela.musaraj@yahoo.fr" class="text-fluid-body text-gold-light hover:text-gold transition-premium clickable block mb-4n">
+            <div class="font-mono text-fluid-xs uppercase text-violet-light mb-4n">Contact</div>
+            <a href="mailto:adanela.musaraj@yahoo.fr" class="text-fluid-body text-violet-glow hover:text-violet transition-premium clickable block mb-4n">
               adanela.musaraj@yahoo.fr
             </a>
+            <div class="accent-line"></div>
+            <div class="text-fluid-sm text-paper/60 mt-4n">
+              <span class="block font-mono text-fluid-xs uppercase text-orange mb-2n">Institutional Scope</span>
+              Banks · UN Agencies · EU Agencies · EIB<br/>International NGOs · Education · Environmental Sectors
+            </div>
           </div>
+          <!-- Services -->
           <div>
-            <div class="font-mono text-fluid-xs uppercase text-gold mb-4n">Services</div>
+            <div class="font-mono text-fluid-xs uppercase text-green mb-4n">Services</div>
             <ul class="space-y-2n text-fluid-sm text-paper/70">
-              <li>• EIA &amp; ESIA Assessments</li>
-              <li>• Biodiversity Action Plans</li>
-              <li>• Program Evaluation</li>
-              <li>• Scientific Due Diligence</li>
+              <li class="flex items-start gap-2n"><span class="text-violet">•</span> EIA &amp; ESIA Assessments</li>
+              <li class="flex items-start gap-2n"><span class="text-orange">•</span> Biodiversity Action Plans (BAP)</li>
+              <li class="flex items-start gap-2n"><span class="text-green">•</span> Program Evaluation &amp; Impact</li>
+              <li class="flex items-start gap-2n"><span class="text-violet">•</span> Scientific Due Diligence (TRL3-7)</li>
+              <li class="flex items-start gap-2n"><span class="text-orange">•</span> Critical Habitat Assessments</li>
             </ul>
           </div>
         </div>
+      </div>
+      
+      <button class="btn-violet px-12n py-4n text-fluid-sm clickable">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        <span>Request Institutional Brief</span>
+      </button>
+      
+      <div class="mt-16n font-mono text-fluid-xs text-paper/40">
+        <p>NACE Anchor: 72.10 — R&amp;D Natural Sciences &amp; Engineering</p>
+        <p class="mt-2n">Sections M · P · E · K · Fully Remote · ISBN/ISSN/ORCID/DOI/ROR Indexing</p>
+        <p class="mt-2n">
+          <span class="text-violet">EIB · SESA · ESIA · ESPM · ESCP ·</span>
+          <span class="text-orange"> ESF · OHS · ESAP · ESMF ·</span>
+          <span class="text-green"> CHMP · ECPP · LCA · CHA · Feasibility Studies</span>
+        </p>
+        <p class="mt-2n">
+          <span class="text-violet">Biodiversity Offsets · BBA · FFMP ·</span>
+          <span class="text-orange"> EEPA · EIA · BAP ·</span>
+          <span class="text-green"> ESS6 · Agricultural Development Strategy</span>
+        </p>
       </div>
     </div>
   </section>
@@ -488,7 +772,10 @@
   <footer class="border-t border-subtle py-8n px-8n">
     <div class="max-w-7xl mx-auto text-center">
       <span class="font-mono text-fluid-xs text-paper/40">
-        Dr. Adanela Musaraj — EIB · SESA · ESIA · ESPM · ESCP · ESF · OHS · ESAP · ESMF · ESS6
+        Dr. Adanela Musaraj — 
+        <span class="text-violet">EIB · SESA · ESIA · ESPM · ESCP ·</span>
+        <span class="text-orange"> ESF · OHS · ESAP · ESMF ·</span>
+        <span class="text-green"> CHMP · ECPP · LCA · CHA · Feasibility Studies</span>
       </span>
     </div>
   </footer>
